@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +8,79 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tevCreditCardTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/cadastrar_cartao"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="29.32dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toTopOf="@id/etCreditCardNumber"/>
+
+    <EditText
+        android:id="@+id/etCreditCardNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/n_mero_do_cart_o"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tevCreditCardTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="39dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"/>
+
+    <EditText
+        android:id="@+id/etCreditCardName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nome_do_titular"
+        app:layout_constraintTop_toBottomOf="@id/etCreditCardNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColorHint="@color/white"
+        android:layout_marginTop="39dp"
+        android:layout_marginStart="20dp"/>
+
+    <EditText
+        android:id="@+id/etCreditCardData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/n_mero_do_cart_o"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/etCreditCardName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/etCreditCardCVV"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_marginTop="39dp"
+        android:layout_marginStart="20dp"/>
+
+    <EditText
+        android:id="@+id/etCreditCardCVV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/n_mero_do_cart_o"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/etCreditCardName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/etCreditCardData"
+        android:layout_marginTop="39dp"/>
+
+    <Button
+        android:id="@+id/btCreditCardSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/salvar"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="12dp"
+        android:background="@drawable/custom_button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

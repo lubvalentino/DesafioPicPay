@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DesafioPicPayAndroid</string>
+    <string name="cadastrar_cartao">Cadastrar cartão</string>
+    <string name="nome_do_titular">Nome do Titular</string>
+    <string name="n_mero_do_cart_o">Número do cartão</string>
+    <string name="salvar">Salvar</string>
 </resources>
