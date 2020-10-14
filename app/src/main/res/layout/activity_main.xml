@@ -18,6 +18,8 @@
         android:textColor="@color/white"
         android:layout_marginTop="29.32dp"
         android:layout_marginStart="20dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="456dp"
         app:layout_constraintBottom_toTopOf="@id/etCreditCardNumber"/>
 
     <EditText
@@ -29,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@id/tevCreditCardTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="82dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"/>
 
@@ -38,36 +40,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/nome_do_titular"
-        app:layout_constraintTop_toBottomOf="@id/etCreditCardNumber"
+        app:layout_constraintTop_toBottomOf="@id/tevCreditCardTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textColorHint="@color/white"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="170dp"
         android:layout_marginStart="20dp"/>
 
     <EditText
         android:id="@+id/etCreditCardData"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/n_mero_do_cart_o"
+        android:hint="Vencimento"
         android:textColorHint="@color/white"
         app:layout_constraintTop_toBottomOf="@id/etCreditCardName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/etCreditCardCVV"
         app:layout_constraintHorizontal_chainStyle="spread"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="88dp"
         android:layout_marginStart="20dp"/>
 
     <EditText
         android:id="@+id/etCreditCardCVV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/n_mero_do_cart_o"
+        android:hint="CVV"
         android:textColorHint="@color/white"
         app:layout_constraintTop_toBottomOf="@id/etCreditCardName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/etCreditCardData"
-        android:layout_marginTop="39dp"/>
+        android:layout_marginTop="88dp"/>
 
     <Button
         android:id="@+id/btCreditCardSave"
