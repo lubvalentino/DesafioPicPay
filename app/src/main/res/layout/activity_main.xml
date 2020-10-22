@@ -17,22 +17,16 @@
 
         <ImageButton
             android:id="@+id/ivCreditcardBack"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
+            style="@style/ButtonDefault"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/ic_keyboard_arrow_left_24px" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
             android:id="@+id/tvCreditCardTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register_credit_card"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="30sp"
+            style="@style/TitleDefault"
             android:layout_marginTop="30sp"
             android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +70,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tilCreditCardExpiration">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCreditCardName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/EditTextDefault"
@@ -128,12 +123,13 @@
             android:id="@+id/btCreditCardSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
             android:text="@string/credit_card_save"
             style="@style/ButtonDefault"
+            app:layout_constraintVertical_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilCreditCardExpiration"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
