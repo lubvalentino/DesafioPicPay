@@ -11,21 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.PaymentActivity"></activity>
-        <activity android:name=".view.activity.UserPaymentActivity" />
-        <activity android:name=".view.activity.HomeActivity" />
-        <activity android:name=".MainActivity2" />
-        <activity android:name=".view.activity.Payment_Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".view.activity.UserPaymentActivity"></activity>
+        <activity android:name=".view.activity.HomeActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".view.activity.RegisterCreditCardActivity" />
+        <activity android:name=".view.activity.PaymentActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+        <activity android:name=".view.activity.RegisterCreditCardActivity"/>
+
         <activity
             android:name=".view.activity.MainActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize">
+        </activity>
     </application>
 
 </manifest>
