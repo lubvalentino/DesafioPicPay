@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".MainActivity">
+    tools:context=".view.activity.MainActivity">
 
     <!-- RelativeLayout, LinearLayout e ConstraintLayout -->
     <!-- CordinatorLayout, FrameLayout -->
@@ -16,21 +16,21 @@
         android:layout_height="wrap_content">
 
         <ImageButton
-            android:id="@+id/ivCreditcardBack"
-            style="@style/ButtonDefault"
+            android:id="@+id/ibCreditcardBack"
+            style="@style/BackButtonDefault"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tvCreditCardTitle"
+            style="@style/TitleDefault"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register_credit_card"
-            style="@style/TitleDefault"
-            android:layout_marginTop="30sp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="@dimen/value_thirty_sp"
+            android:layout_marginStart="@dimen/value_twenty_dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivCreditcardBack"
+            app:layout_constraintTop_toBottomOf="@+id/ibCreditcardBack"
             app:layout_constraintBottom_toTopOf="@+id/tilCreditCardNumber"/>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -70,7 +70,6 @@
             app:layout_constraintBottom_toTopOf="@+id/tilCreditCardExpiration">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etCreditCardName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/EditTextDefault"
@@ -83,8 +82,8 @@
             style="@style/TextInputLayoutDefault"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="39dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="@dimen/value_thirty_nine_dp"
+            android:layout_marginEnd="@dimen/value_twenty_dp"
             android:hint="@string/credit_card_expiration"
             app:layout_constraintEnd_toStartOf="@+id/tilCreditCardCvv"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -121,15 +120,16 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btCreditCardSave"
+            style="@style/ButtonDefault"
+            android:enabled="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/credit_card_save"
-            style="@style/ButtonDefault"
             app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilCreditCardExpiration"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilCreditCardExpiration" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

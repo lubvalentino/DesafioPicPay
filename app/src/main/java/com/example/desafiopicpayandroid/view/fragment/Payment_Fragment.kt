@@ -3,16 +3,17 @@ package com.example.desafiopicpayandroid
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import com.example.desafiopicpayandroid.viewModel.PaymentViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.android.synthetic.main.fragment_payment_.*
+import kotlinx.android.synthetic.main.fragment_payment.*
 
+class PaymentFragment : BottomSheetDialogFragment() {
 
-class Payment_Fragment : BottomSheetDialogFragment() {
+    private lateinit var viewModel: PaymentViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,24 +21,35 @@ class Payment_Fragment : BottomSheetDialogFragment() {
         Log.i("teste - Fragment", "onCreate")
     }
 
+    //activity - activity - intent.putExtra
+    //activity - fragment - arguments(Bundle)
+    //fragment - fragment - arguments(Bundle)
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         Log.i("teste - Fragment", "onCreateView")
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_payment_, container, false)
+        return inflater.inflate(R.layout.fragment_payment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.i("teste - Fragment", "onViewCreated")
-        turma3.text = "Aula 23"
-        dismiss.setOnClickListener {
-            Toast.makeText(requireContext(), "Cliquei no botão", Toast.LENGTH_SHORT).show()
-            dismiss()
+        activity?.let {
+            viewModel = ViewModelProvider(it).get(PaymentViewModel::class.java)
+        }
+
+        btBlue.setOnClickListener {
+            viewModel.onTextChange.postValue("#0000FF")
+        }
+
+        btRed.setOnClickListener {
+            viewModel.onTextChange.postValue("#FF0000")
+        }
+
+        btGreen.setOnClickListener {
+            viewModel.onTextChange.postValue("#00FF00")
         }
     }
 
@@ -59,6 +71,19 @@ class Payment_Fragment : BottomSheetDialogFragment() {
 
     override fun onResume() {
         super.onResume()
+
+        val bundle = arguments
+        Log.i("bundle", bundle?.getString("testeString") ?: "")
+        Log.i("bundle", bundle?.getDouble("testeDouble").toString())
+        Log.i("bundle", bundle?.getFloat("testeFloat").toString())
+        Log.i("bundle", bundle?.getInt("testeInt").toString())
+
+//        Log.i("teste - Fragment", "onViewCreated")
+//        turma3.text = "Aula 23"
+//        dismiss.setOnClickListener {
+//            Toast.makeText(requireContext(), "Cliquei no botão", Toast.LENGTH_SHORT).show()
+//            dismiss()
+//        }
 
         Log.i("teste - Fragment", "onResume")
     }
